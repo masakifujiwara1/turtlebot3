@@ -186,7 +186,7 @@
   </link>
 
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0.073 -0.011 0.084" rpy="0 0 0"/>
+    <origin xyz="0.073 -0.011 0.384" rpy="0 0.524 0"/>
     <parent link="base_link"/>
     <child link="camera_link"/>
   </joint>
@@ -213,5 +213,33 @@
     <child link="camera_rgb_optical_frame"/>
   </joint>
   <link name="camera_rgb_optical_frame"/>
+
+  <joint name="camera_rgb_left_joint" type="fixed">
+    <origin xyz="0.003 0.111 0.009" rpy="0 0 0.175"/>
+    <parent link="camera_link"/>
+    <child link="camera_rgb_left_frame"/>
+  </joint>
+  <link name="camera_rgb_left_frame"/>
+
+  <joint name="camera_rgb_optical_left_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+    <parent link="camera_rgb_left_frame"/>
+    <child link="camera_rgb_optical_left_frame"/>
+  </joint>
+  <link name="camera_rgb_optical_left_frame"/>
+
+  <joint name="camera_rgb_right_joint" type="fixed">
+    <origin xyz="0.003 -0.089 0.009" rpy="0 0 -0.175"/>
+    <parent link="camera_link"/>
+    <child link="camera_rgb_right_frame"/>
+  </joint>
+  <link name="camera_rgb_right_frame"/>
+
+  <joint name="camera_rgb_optical_right_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+    <parent link="camera_rgb_right_frame"/>
+    <child link="camera_rgb_optical_right_frame"/>
+  </joint>
+  <link name="camera_rgb_optical_right_frame"/>
 
 </robot>
